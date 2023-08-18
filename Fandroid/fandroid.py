@@ -90,7 +90,7 @@ if __name__ == "__main__":
             print("\nInformación de cuenta:")
             print(f"Nombre: {usuario1.nombre}")
             print(f"Correo: {usuario1.correo}")
-            print(f"Número de tarjeta: {usuario1.tarjeta}")
+            print(f"Número de tarjeta: {usuario1.numero_tarjeta}")
             print(f"Dispositivos: {', '.join(usuario1.dispositivos)}")
             print(f"Compras realizadas: {len(usuario1.compras)}")
             print(f"Puntos acumulados: {usuario1.puntos}")
