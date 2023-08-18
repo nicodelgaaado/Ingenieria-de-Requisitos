@@ -31,6 +31,16 @@ class Usuario:
             print("No tienes suficientes puntos para canjear este premio.")
             print(f"Puntos acumulados: {self.puntos}")
 
+    def modificar_informacion(self):
+        print("Modificación de Información Personal y de Tarjeta de Crédito")
+        self.nombre = input(f"Nombre actual: {self.nombre}\nNuevo nombre: ")
+        self.correo = input(f"Correo electrónico actual: {self.correo}\nNuevo correo: ")
+        self.marca_tarjeta = input(f"Marca de tarjeta actual: {self.marca_tarjeta}\nNueva marca de tarjeta: ")
+        self.numero_tarjeta = input(f"Número de tarjeta actual: {self.numero_tarjeta}\nNuevo número de tarjeta: ")
+        self.vencimiento = input(f"Fecha de vencimiento actual: {self.vencimiento}\nNueva fecha de vencimiento: ")
+        self.codigo_verificacion = input(f"Código de verificación actual: {self.codigo_verificacion}\nNuevo código de verificación: ")
+        print("¡Información modificada exitosamente!")
+
 class Aplicacion:
     def __init__(self, nombre, precio):
         self.nombre = nombre
@@ -65,8 +75,9 @@ if __name__ == "__main__":
         print("1. Agregar dispositivo")
         print("2. Comprar aplicación")
         print("3. Canjear premio")
-        print("4. Ver información de cuenta")
-        print("5. Salir")
+        print("4. Modificar información personal y de tarjeta")
+        print("5. Ver información de cuenta")
+        print("6. Salir")
         
         opcion = input("Seleccione una opción: ")
         
@@ -87,14 +98,19 @@ if __name__ == "__main__":
                 print("Aquí está tu certificado:")
                 print(certificado)
         elif opcion == "4":
+            usuario1.modificar_informacion()
+        elif opcion == "5":
             print("\nInformación de cuenta:")
             print(f"Nombre: {usuario1.nombre}")
             print(f"Correo: {usuario1.correo}")
+            print(f"Marca de tarjeta: {usuario1.marca_tarjeta}")
             print(f"Número de tarjeta: {usuario1.numero_tarjeta}")
+            print(f"Vencimiento: {usuario1.vencimiento}")
+            print(f"Código de verificación: {usuario1.codigo_verificacion}")
             print(f"Dispositivos: {', '.join(usuario1.dispositivos)}")
             print(f"Compras realizadas: {len(usuario1.compras)}")
             print(f"Puntos acumulados: {usuario1.puntos}")
-        elif opcion == "5":
+        elif opcion == "6":
             print("Gracias por utilizar la plataforma de venta de aplicaciones Fandroid. ¡Hasta luego!")
             break
         else:
